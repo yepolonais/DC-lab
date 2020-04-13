@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DC|lab</title>
-</head>
-<body>
+<?php
+/*
+ * The main template file.
+ */
 
-</body>
-</html>
+get_header(); ?>
+
+<div class="wrapper">
+	<div class="container">
+	
+		<div class="blog-list">
+			<div class="row">
+				<?php if ( have_posts() ) : ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+				<div class="col-md-4 col-ms-6 col-xs-12 item">
+					<?php get_template_part( 'template-parts/content', '' ); ?>
+				</div>
+				<?php endwhile; ?>
+				<?php else : ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<?php endif; ?>
+			</div>
+		</div>
+		<div class="pagination">
+			<?php montheme_pagination(); ?>
+		</div>
+		
+	</div><!--container-->
+</div><!--wrapper-->
+
+<?php get_footer(); ?>
