@@ -13,6 +13,7 @@ get_header(); ?>
 		</div>
 
         <btn class="btn btn-primary">Mon bouton bootstrap</btn>
+        <h1> Mon titre </h1>
 	
 		<div class="page-content">
             <?php while ( have_posts() ) : the_post(); ?>

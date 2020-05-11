@@ -29,6 +29,7 @@ function call_scripts() {
     
     
     wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+    wp_enqueue_style( 'main_css', get_template_directory_uri() . '/assets/css/main.css' );
     
 
     
