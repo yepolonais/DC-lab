@@ -28,7 +28,7 @@
 						<div class="bottom-bar">
                             <div class="row">
                                 <div class="copyright col-md-6">
-                                    <p>Bordeaux Piscines <?php echo date("Y ");?> &copy; - <?php _e( 'Tous droits réservés', 'montheme' ); ?>.</p>
+                                    <p>Bordeaux Piscines <?php echo date("Y");?> &copy; - <?php _e( 'Tous droits réservés', 'montheme' ); ?>.</p>
                                 </div>
                                 <div class="credit col-md-6">
                                     <?php _e( 'Site réalisé par', 'montheme' ); ?> <a href="https://pierre-wagner.fr/" target="_blank" rel="nofollow">WPCréations</a>
@@ -47,7 +47,7 @@
 Modal
 </button>-->
 
-<!-- Modal -->
+<!-- Modal 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -65,7 +65,9 @@ Modal
       </div>
     </div>
   </div>
-</div>
+</div>  
+
+-->
 </footer>
     
 <?php wp_footer(); ?>

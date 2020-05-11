@@ -19,3 +19,20 @@ include __THEME_DIR__.'/functions/functions-rewrite.php';
 include __THEME_DIR__.'/functions/functions-search.php';
 include __THEME_DIR__.'/functions/functions-sessions.php';
 include __THEME_DIR__.'/functions/functions-ajax.php';
+
+
+
+
+function call_scripts() {
+	
+	
+    
+    
+    wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+    
+
+    
+    
+   
+}
+add_action( 'wp_enqueue_scripts', 'call_scripts' );
