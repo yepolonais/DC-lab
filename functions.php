@@ -1,33 +1,21 @@
+<?php
+define('__THEME_DIR__',__DIR__);
 
-
-<?php 
-
-// Ajouter la prise en charge des images mises en avant
-add_theme_support( 'post-thumbnails' );
-
-// Ajouter automatiquement le titre du site dans l'en-tête du site
-add_theme_support( 'title-tag' );
-
-function wpbootstrap_styles_scripts(){
-
-
-    wp_enqueue_style('style', get_stylesheet_uri());
-
-
-    wp_enqueue_script( 'bootstrap', 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true);
-
-    
-    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
-    wp_enqueue_script('jquery');
-}
-add_action('wp_enqueue_scripts', 'wpbootstrap_styles_scripts');
-
-
-
-
-
-
-
-
-
-?>
+include __THEME_DIR__.'/functions/functions-init.php';
+include __THEME_DIR__.'/functions/functions-supports.php';
+include __THEME_DIR__.'/functions/functions-css-js.php';
+include __THEME_DIR__.'/functions/functions-acf.php';
+include __THEME_DIR__.'/functions/functions-admin.php';
+include __THEME_DIR__.'/functions/functions-annexes.php';
+include __THEME_DIR__.'/functions/functions-ariane.php';
+include __THEME_DIR__.'/functions/functions-bbpress.php';
+include __THEME_DIR__.'/functions/functions-excerpt.php';
+include __THEME_DIR__.'/functions/functions-html-functions.php';
+include __THEME_DIR__.'/functions/functions-menu.php';
+include __THEME_DIR__.'/functions/functions-pagination.php';
+include __THEME_DIR__.'/functions/functions-post-get.php';
+include __THEME_DIR__.'/functions/functions-removes.php';
+include __THEME_DIR__.'/functions/functions-rewrite.php';
+include __THEME_DIR__.'/functions/functions-search.php';
+include __THEME_DIR__.'/functions/functions-sessions.php';
+include __THEME_DIR__.'/functions/functions-ajax.php';
