@@ -1,10 +1,51 @@
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	<h2 class="page-title"><?php _e( 'Aucun résultat', 'montheme' ); ?></h2>
-	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-	<p><?php printf( __( 'Prêt à publier votre premier post ? <a href="%1$s">C\'est par ici</a>.', 'montheme' ), admin_url( 'post-new.php' ) ); ?></p>
-	<?php elseif ( is_search() ) : ?>
-	<p><?php _e( 'Désolé, mais rien ne correspond à vos termes de recherche. Essayez s\'il vous plaît de nouveau avec des mots-clés différents.', 'montheme' ); ?></p>
-	<?php else : ?>
-	<p><?php _e( 'Il semble que nous ne trouvons pas ce que vous cherchez. Peut-être la recherche peut vous aider.', 'montheme' ); ?></p>
-	<?php endif; ?>
-</div><!-- .page-content -->
+<?php
+/**
+ * Template part for displaying a message that posts cannot be found
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package DClab
+ */
+
+?>
+
+<section class="no-results not-found">
+	<header class="page-header">
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dclab' ); ?></h1>
+	</header><!-- .page-header -->
+
+	<div class="page-content">
+		<?php
+		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+
+			printf(
+				'<p>' . wp_kses(
+					/* translators: 1: link to WP admin new post page. */
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'dclab' ),
+					array(
+						'a' => array(
+							'href' => array(),
+						),
+					)
+				) . '</p>',
+				esc_url( admin_url( 'post-new.php' ) )
+			);
+
+		elseif ( is_search() ) :
+			?>
+
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dclab' ); ?></p>
+			<?php
+			get_search_form();
+
+		else :
+			?>
+
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'dclab' ); ?></p>
+			<?php
+			get_search_form();
+
+		endif;
+		?>
+	</div><!-- .page-content -->
+</section><!-- .no-results -->

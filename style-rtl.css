@@ -1,13 +1,13 @@
 /*!
 Theme Name: DClab
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme URI: https://underscores.me/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Hi. I'm a starter theme called <code>DClab</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: dclab
+Text Domain: DClab
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -471,7 +471,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 3em 1.5em 0;
 }
 
 ul {
@@ -485,7 +485,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -636,27 +636,27 @@ a:active {
 	display: none;
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
+	float: right;
 	position: absolute;
 	top: 100%;
-	left: -999em;
+	right: -999em;
 	z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
+	right: -999em;
 	top: 0;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	left: auto;
+	right: auto;
 }
 
 .main-navigation ul ul a {
@@ -665,7 +665,7 @@ a:active {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+	right: auto;
 }
 
 .main-navigation li {
@@ -750,7 +750,7 @@ a:active {
 	font-size: 0.875rem;
 	font-weight: 700;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -768,22 +768,22 @@ a:active {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-	float: left;
-	margin-right: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-	float: right;
-	margin-left: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 	margin-bottom: 1.5em;
 }
 
@@ -889,8 +889,8 @@ object {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-caption .wp-caption-text {
@@ -906,46 +906,45 @@ object {
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
-	display: grid;
-	grid-gap: 1.5em;
 }
 
 .gallery-item {
 	display: inline-block;
 	text-align: center;
+	vertical-align: top;
 	width: 100%;
 }
 
-.gallery-columns-2 {
-	grid-template-columns: repeat(2, 1fr);
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
 }
 
-.gallery-columns-3 {
-	grid-template-columns: repeat(3, 1fr);
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
 }
 
-.gallery-columns-4 {
-	grid-template-columns: repeat(4, 1fr);
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
 }
 
-.gallery-columns-5 {
-	grid-template-columns: repeat(5, 1fr);
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
 }
 
-.gallery-columns-6 {
-	grid-template-columns: repeat(6, 1fr);
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
 }
 
-.gallery-columns-7 {
-	grid-template-columns: repeat(7, 1fr);
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
 }
 
-.gallery-columns-8 {
-	grid-template-columns: repeat(8, 1fr);
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
 }
 
-.gallery-columns-9 {
-	grid-template-columns: repeat(9, 1fr);
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
 }
 
 .gallery-caption {
