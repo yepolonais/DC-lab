@@ -1,26 +1,15 @@
 <?php
-
-/**
- *
- * Template de la page actualités
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package DClab
- */
-
-
+ //* Template de la page actualités
 ?>
+
 <div class="wrapper">
 	<div class="container">
-
-
-
 		<section id="" class="home-blog">
 			<h2>Les dernières Actualités</h2>
 			<?php
 			$args = array(
 				'post-type' => 'post',
-				'showposts' => '1',
+				'showposts' => '6',
 				//'cat' => '3',
 				//'category_name' => 'categorie-02',
 				'orderby' => 'date',
@@ -124,6 +113,8 @@
 			// $current_category = get_queried_object();
 			wp_dropdown_categories(array(
 							'hierarchical' => 1,
+							'value_field'  => 'name',
+							'name'         => 'cat',
 			));
 
 			?>

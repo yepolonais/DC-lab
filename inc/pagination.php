@@ -2,7 +2,7 @@
 
 if( !function_exists( 'theme_pagination' ) ) {
 
-    function theme_pagination() {
+  function theme_pagination() {
 
 	global $wp_query;
 	global $wp_rewrite;
