@@ -9,9 +9,6 @@
  */
 
 
-
-
-
 ?>
 <div class="wrapper">
 	<div class="container">
@@ -23,12 +20,12 @@
 			<?php
 			$args = array(
 				'post-type' => 'post',
-				'showposts' => '6',
+				'showposts' => '1',
 				//'cat' => '3',
 				//'category_name' => 'categorie-02',
 				'orderby' => 'date',
 				'order' => 'desc',
-				'ignore_sticky_post' => 1,
+				// 'ignore_sticky_post' => 1,
 			); ?>
 
 			<?php
@@ -36,58 +33,63 @@
 			<?php if ($the_query->have_posts()) : ?>
 				<div class="row">
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-						<div class="col-md-4 col-ms-6 col-xs-12 item">
 
+						<article <?php post_class($class = 'col-md-4 col-ms-6 col-xs-12 item'); ?> id="post-<?php the_ID(); ?>">
+							<header class="entry-header">
+								<?php
+								the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+								if ('post' === get_post_type()) :
+								?>
+									<div class="entry-meta">
+										<?php
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								<header class="entry-header">
-									<?php
-									the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-									if ('post' === get_post_type()) :
+										$datePublication = get_the_time('G');
+										$dateActuelle = current_time('timestamp');
+										echo 'publié il y a ' . human_time_diff($datePublication, $dateActuelle);
+										?>
+
+									</div><!-- .entry-meta -->
+								<?php endif; ?>
+							</header><!-- .entry-header -->
+
+							<section>
+
+								<div>
+									<?php // dclab_post_thumbnail('article-size');
 									?>
-										<div class="entry-meta">
-											<?php
+									<!--TODO: essayer de piger pkoi cela ne marche pas -->
+									<?php //  the_post_thumbnail(array( 30, 10 ));
+									?>
 
-											$datePublication = get_the_time('G');
-											$dateActuelle = current_time('timestamp');
-											echo 'publié il y a ' . human_time_diff($datePublication, $dateActuelle);
-											?>
+									<?php the_post_thumbnail('article-size'); ?>
+									<?php the_excerpt(); ?>
+								</div>
 
-										</div><!-- .entry-meta -->
-									<?php endif; ?>
-								</header><!-- .entry-header -->
+								<div id="commentaires" class="comments">
+									<i class="fas fa-comments"></i>
+									<?php echo get_comments_number(); ?>
+								</div>
 
-								<section>
+							</section>
 
-									<div>
-										<?php // dclab_post_thumbnail('article-size');
-										?>
-										<!--TODO: essayer de piger pkoi cela ne marche pas -->
-										<?php //  the_post_thumbnail(array( 30, 10 ));
-										?>
+							<footer class="entry-footer">
+								<?php the_category(); ?>
+							</footer><!-- .entry-footer -->
+						</article>
 
-										<?php the_post_thumbnail('article-size'); ?>
-										<?php the_excerpt(); ?>
-									</div>
+						<!-- #post-<?php the_ID(); ?> -->
 
-									<div id="commentaires" class="comments">
-										<i class="fas fa-comments"></i>
-										<?php echo get_comments_number(); ?>
-									</div>
 
-								</section>
 
-								<footer class="entry-footer">
-									<?php the_category(); ?>
-								</footer><!-- .entry-footer -->
-							</article>
-							<!-- #post-<?php the_ID(); ?> -->
-
-						</div>
 					<?php endwhile; ?>
+
+
 					<!-- end of the loop -->
+
 				</div>
 				<?php wp_reset_postdata(); ?>
+				<?php the_posts_pagination(); ?>
+
 			<?php else :	?>
 				<p><?php _e('Désolé, aucun article ne correspond à votre recherche.', 'montheme'); ?></p>
 			<?php endif;	?>
@@ -98,19 +100,34 @@
 
 		// var_dump($wp_query->found_posts);
 		// var_dump($wp_query);
-		// the_posts_pagination($the_query);
+		// the_posts_pagination();
 		?>
 		<div class="pagination">
 			<?php
-			var_dump($the_query);
-			var_dump($the_query->max_num_pages);
-			var_dump($the_query->query_vars['paged']);
-			theme_pagination($the_query);
+			// global $wp_query;
+			// global $wp_rewrite;
+
+
+			// var_dump($wp_query);
+			// var_dump($wp_rewrite);
+			// var_dump($the_query);
+			// var_dump($the_query->max_num_pages);
+			// var_dump($the_query->query_vars['paged']);
+
+
+			// theme_pagination();
 			?>
 		</div>
 
+		<div class="tri">
+			<?php
+			// $current_category = get_queried_object();
+			wp_dropdown_categories(array(
+							'hierarchical' => 1,
+			));
 
-
+			?>
+		</div>
 	</div>
 	<!--container-->
 </div>

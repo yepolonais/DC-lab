@@ -53,7 +53,7 @@ get_header();
 	?>
 
 <?php
-var_dump($wp_query);
+// var_dump($wp_query);
 var_dump($wp_query->found_posts);
 the_posts_pagination(); ?>
 <!-- affiche la pagination pour les articles -->
