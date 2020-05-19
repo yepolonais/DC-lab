@@ -13,7 +13,13 @@
 		<?php
 		the_content();
 
-		$the_query = new WP_Query( array( 'post_type' => 'post' ) );
+		$paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
+
+		$the_query = new WP_Query(array(
+			'post_type' => 'post',
+			'posts_per_page'=> -1,
+			'paged' => $paged,
+		));
 
 		// The Loop
 		if ( $the_query->have_posts() ) {

@@ -62,6 +62,9 @@ add_action( 'widgets_init', 'dclab_widgets_init' );
  * Implémente la pagination
  */
 require_once(get_theme_file_path() . '/inc/pagination.php');
+/**
+ * Implémente la boucle des articles
+ */
+require_once(get_theme_file_path() . '/inc/boucle_display_articles.php');
 
-
-
+?>

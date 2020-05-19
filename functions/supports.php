@@ -20,6 +20,10 @@ if ( ! function_exists( 'dclab_setup' ) ) :
 			)
 		);
 
+		// Scroll infini
+
+
+
 
 		// TODO: les fonctions suivantes n'ont pas encore été exploitées
 
@@ -87,4 +91,15 @@ endif;
 
 //* Notre fonction personnalisée (dclab_setup) sera exécutée avec le hook 'after_setup_theme'
 add_action( 'after_setup_theme', 'dclab_setup' );
+
+
+
+
+/**
+ * Load Jetpack compatibility file.
+ */
+
+require_once get_template_directory() . '/inc/jetpack.php';
+require_once get_template_directory() . '/inc/tri_articles.php';
+
 ?>
