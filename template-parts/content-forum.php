@@ -17,7 +17,7 @@
 
 		$the_query = new WP_Query(array(
 			'post_type' => 'post',
-			'posts_per_page'=> -1,
+			'posts_per_page'=> 3,
 			'paged' => $paged,
 		));
 
@@ -29,6 +29,7 @@
 						echo '<li>' . get_the_title() . '</li>';
 						the_post_thumbnail('medium');
 						the_content();
+						next_post_link();
 				}
 				echo '</ul>';
 		} else {

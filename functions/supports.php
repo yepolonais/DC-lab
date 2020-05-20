@@ -17,10 +17,16 @@ if ( ! function_exists( 'dclab_setup' ) ) :
 				'theme' => esc_html__( 'choix des labs', 'dclab' ),
 				'ville' => esc_html__( 'choix des écoles', 'dclab' ),
 				'footer' => esc_html__( 'menu du pied de page', 'dclab' ),
+				'event-cat' => esc_html__( 'menu des catégories du calendrier', 'dclab' ),
 			)
 		);
 
-		// Scroll infini
+
+		//infinite scroll
+		add_theme_support( 'infinite-scroll', array(
+			'container' => 'primary',
+			'footer' => 'page',
+		) );
 
 
 

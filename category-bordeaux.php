@@ -48,9 +48,8 @@ get_header();
 	?>
 
 </main><!-- #main -->
-<div class="pagination">
-	<?php theme_pagination(); ?>
-</div>
 <?php
 get_sidebar();
 get_footer();
+
+?>

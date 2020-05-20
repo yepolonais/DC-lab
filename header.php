@@ -78,13 +78,10 @@
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dclab' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
+			<?php wp_nav_menu([
+				'theme_location' => 'header',
+				'container' => false,
+				'menu_class' => 'navbar-nav mr-auto'
+			]) ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
