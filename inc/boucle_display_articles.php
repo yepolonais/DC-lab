@@ -14,13 +14,17 @@ function dclab_display_articles(){
 
 	$the_query = new WP_Query($args);
 	if ($the_query->have_posts()) : ?>
-		<div class="row">
+		<div class="griddedposts">
 			<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 				<article <?php post_class($class = 'col-md-4 col-ms-6 col-xs-12 item'); ?> id="post-<?php the_ID(); ?>">
 					<header class="entry-header">
+						<div>
+							<?php the_post_thumbnail('article-size'); ?>
+						</div>
 						<?php
 						the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 						if ('post' === get_post_type()) :
+						the_excerpt();
 						?>
 							<div class="entry-meta">
 								<?php
@@ -33,10 +37,7 @@ function dclab_display_articles(){
 					</header><!-- .entry-header -->
 
 					<section>
-						<div>
-							<?php the_post_thumbnail('article-size'); ?>
-							<?php the_excerpt(); ?>
-						</div>
+
 						<div id="commentaires" class="comments">
 							<i class="fas fa-comments"></i>
 							<?php echo get_comments_number(); ?>
@@ -57,4 +58,3 @@ function dclab_display_articles(){
 		<p><?php _e('Désolé, aucun article ne correspond à votre recherche.', 'montheme'); ?></p>
 	<?php endif;	?>
 <?php } ?>
-
