@@ -2,10 +2,23 @@
     --cyanblue : #00A3AD;
     --mainblue : #00263E;
     --white : #FFFFFF;
+    --black : #00263E;
 }
 
 body {
-    /* background-color: var(--mainblue); */
+    background-color: var(--mainblue);
+}
+
+.entry-title > a {
+    text-decoration: none;
+    color : var(--black);
+    font-size: 20px;
+}
+
+.article-content p {
+    font-size: 15px;
+    display: flex;
+    align-content: space-between;
 }
 
 .home-blog {
@@ -31,9 +44,10 @@ body {
 
 .griddedposts {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
-    row-gap: 15px;
+    grid-template-columns: repeat(4, 350px);
+    column-gap: 18px;
+    row-gap: 25px;
+    justify-content: center;
 }
 
 .postform {
@@ -43,10 +57,79 @@ body {
     padding: 5px;
     padding-top: 7px;
     padding-bottom: 7px;
-    font-family: Regular;
+    font-family: arial;
     display: grid;
+}
+
+.title-actu {
+    text-align: center;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.entry-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.thumbnail-actu img {
+}
+
+.article-actu {
+    background-color: var(--white);
+    box-shadow: inset 0px 0px 0px 2px rgba(179,179,179,1);
+    display: grid;
+    grid-template-rows: 200px;
+}
+
+.article-content {
+    padding: 0px 10px 0px 15px;
+    font-family: arial;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.comments {
+    padding-bottom: 10px;
+}
+
+.thumbnail-actu {
+    max-width: 100%;
 }
 
 .tri {
     justify-self: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.entry-footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    /* display: none; */
+}
+
+.entry-footer ul a{
+    text-decoration: none;
+    color: var(--cyanblue);
+}
+
+/* Responsive 1 */
+
+@media (max-width: 1650px) {
+    .griddedposts {
+        display: grid;
+        grid-template-columns: repeat(3, 350px);
+        column-gap: 18px;
+        row-gap: 25px;
+        justify-content: center;
+    }
 }

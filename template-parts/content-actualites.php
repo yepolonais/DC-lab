@@ -4,7 +4,7 @@
 
 <div class="wrapper">
 	<div class="container">
-		<h2>Les dernières Actualités</h2>
+		<h2 class="title-actu">Les dernières Actualités</h2>
 		<section class="home-blog">
 					<div class="tri">
 			<?php dclab_tri_articles();?>
