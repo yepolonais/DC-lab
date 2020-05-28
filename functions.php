@@ -23,6 +23,10 @@ require_once('functions/supports.php');   // support pour les menus, images, etc
 require_once('functions/assets.php'); // support pour les css et js
 
 
+require_once('functions/addMetaUser.php'); // page ajout meta données
+
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -59,7 +63,7 @@ function dclab_widgets_init() {
 add_action( 'widgets_init', 'dclab_widgets_init' );
 
 /**
- * Implémente la pagination
+ * Implémente la pagination 
  */
 require_once(get_theme_file_path() . '/inc/pagination.php');
 /**
@@ -67,4 +71,15 @@ require_once(get_theme_file_path() . '/inc/pagination.php');
  */
 require_once(get_theme_file_path() . '/inc/boucle_display_articles.php');
 
+
+
+
+
+
+
+
+
+
 ?>
+
+
