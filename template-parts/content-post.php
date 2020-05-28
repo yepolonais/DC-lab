@@ -9,6 +9,8 @@
  * @since Twenty Twelve 1.0
  */
 ?>
+	<div class="">
+
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -24,6 +26,11 @@
 			?>
 
 			<?php if ( is_single() ) : ?>
+			<?php
+			$datePublication = get_the_time('G');
+			$dateActuelle = current_time('timestamp');
+			echo 'publié il y a ' . human_time_diff($datePublication, $dateActuelle);
+			?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php else : ?>
 			<h1 class="entry-title">
@@ -91,3 +98,4 @@
 			<?php endif; ?>
 		</footer><!-- .entry-meta -->
 	</article><!-- #post -->
+	</div>
