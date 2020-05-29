@@ -9,10 +9,8 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-	<div class="">
 
-
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article class="single-actu" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<div class="featured-post">
 			<?php _e( 'Featured post', 'twentytwelve' ); ?>
@@ -26,11 +24,13 @@
 			?>
 
 			<?php if ( is_single() ) : ?>
-			<?php
-			$datePublication = get_the_time('G');
-			$dateActuelle = current_time('timestamp');
-			echo 'publié il y a ' . human_time_diff($datePublication, $dateActuelle);
-			?>
+			<div class="date">
+				<?php
+				$datePublication = get_the_time('G');
+				$dateActuelle = current_time('timestamp');
+				echo 'publié il y a ' . human_time_diff($datePublication, $dateActuelle);
+				?>
+			</div>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php else : ?>
 			<h1 class="entry-title">
@@ -98,4 +98,3 @@
 			<?php endif; ?>
 		</footer><!-- .entry-meta -->
 	</article><!-- #post -->
-	</div>

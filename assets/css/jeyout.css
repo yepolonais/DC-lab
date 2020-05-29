@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: var(--mainblue);
+    background-color: var(--white);
 }
 
 .title-actu {
@@ -158,12 +158,43 @@ body {
 
 /* Single actu */
 
+/* .flex-nav {
+    display: flex;
+} */
 
+.container-single-actu {
+    background-color: var(--cyanblue);
+    width: 1200px;
+}
 
+.container-single-actu img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
+.single-actu, .single-actu .entry-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.entry-header {
+    overflow: hidden;
+}
 
+.page-single-actu {
+    display: flex;
+    justify-content: center;
+}
 
+.single-actu p {
+
+}
+
+.page-single-actu .nav-links {
+    
+}
 
 
 
