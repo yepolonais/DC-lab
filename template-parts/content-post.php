@@ -10,18 +10,21 @@
  */
 ?>
 
-	<article class="single-actu" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<div class="featured-post">
 			<?php _e( 'Featured post', 'twentytwelve' ); ?>
 		</div>
 		<?php endif; ?>
 		<header class="entry-header">
+			<div class="post-thumbnail">
+
 			<?php
 			if ( ! post_password_required() && ! is_attachment() ) :
-				the_post_thumbnail();
+				the_post_thumbnail('article-single');
 			endif;
 			?>
+			</div>
 
 			<?php if ( is_single() ) : ?>
 			<div class="date">
@@ -31,7 +34,12 @@
 				echo 'publié il y a ' . human_time_diff($datePublication, $dateActuelle);
 				?>
 			</div>
+			<div class="article-info">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<div class="author-avatar">
+				<?php echo get_avatar(get_the_author_meta('user_email'), 45); ?>
+			</div>
+			</div>
 			<?php else : ?>
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
