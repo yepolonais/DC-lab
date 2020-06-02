@@ -278,15 +278,75 @@ body {
 
 .single-post .comments-area {
     margin: 80px 0px 0px 80px;
+    max-width: 390px;
 }
 
 .single-post .comments-title {
-    font-size: 25px;
+    font-size: 18px;
 }
 
 .single-post .comment-reply-title {
-    font-size: 25px;
+    font-size: 18px;
 }
+
+.single-post .comment-list {
+    display: inline-grid;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.single-post .comment-form-comment label {
+    display: none;
+}
+
+.single-post .form-submit .submit {
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    border: 2px solid var(--cyanblue);
+    transition-duration: 0.4s;
+}
+.single-post .form-submit .submit:hover {
+    background-color: var(--cyanblue);
+    color: white;
+}
+
+.single-post .fn a {
+    color: black;
+    font-weight: 800;
+}
+
+.single-post .says {
+    display: none;
+}
+
+.single-post .commentmetadata a {
+    color: grey;
+}
+
+.single-post .comment-edit-link {
+    color: grey;
+}
+
+.single-post .commentmetadata a:first-child {
+    text-decoration: none;
+    cursor: default;
+}
+
+.single-post .comment-list li {
+    border-bottom: 1px solid rgba(0, 0, 0, .5)
+}
+
+.single-post .comment-list .comment-meta {
+    margin-bottom: 20px;
+}
+
+.single-post .comment-list .reply {
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 @media (max-width: 865px) {
     .post-single .entry-content p {
