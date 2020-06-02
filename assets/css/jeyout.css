@@ -205,7 +205,7 @@ body {
     justify-content: space-evenly;
 }
 
-.post-thumbnail {
+.page-single-post .post-thumbnail {
     display: flex;
     justify-content: center;
     align-items: center;
