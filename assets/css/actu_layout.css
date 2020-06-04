@@ -227,6 +227,7 @@ body {
 
 .page-single-post .nav-right {
     margin-right : 5px;
+    visibility: hidden;
 }
 
 .page-single-post .nav-single-post > a {
@@ -345,6 +346,16 @@ body {
 .single-post .comment-list .reply {
     display: flex;
     justify-content: flex-end;
+}
+
+.single-post textarea {
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
 }
 
 

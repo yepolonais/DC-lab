@@ -12,9 +12,11 @@
 get_header();
 ?>
 	<main id="primary" class="site-main page-single-post">
-        <div class="nav-single-post nav-left">
-            <?php previous_post_link('%link','<i class="fas fa-arrow-left"></i>'); ?>
-        </div>
+
+
+		<div class="nav-single-post nav-left">
+			<a href="javascript:history.back()"> <button class="fas fa-arrow-left"></button> </a>
+		</div>
 
 		<div class="post-single">
 
