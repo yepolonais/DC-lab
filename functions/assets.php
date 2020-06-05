@@ -3,6 +3,8 @@
 function dclab_scripts() {
 	// Enqueue styles.
 	wp_enqueue_style( 'dclab-style', get_theme_file_uri() . '/assets/css/layout.css', array(), _S_VERSION );
+	wp_enqueue_style( 'header-style', get_theme_file_uri() . '/assets/css/header.css', array(), _S_VERSION );
+	wp_enqueue_style( 'footer-style', get_theme_file_uri() . '/assets/css/footer.css', array(), _S_VERSION );
 	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
 
 	// Enqueue scripts.
@@ -11,6 +13,7 @@ function dclab_scripts() {
 	wp_enqueue_script( 'jQuery', 'https://code.jquery.com/jquery-3.5.1.min.js', [], \false, \true );
 	wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', [], \false, \true );
 	wp_enqueue_script( 'tri_actualite', get_theme_file_uri() . '/assets/js/tri_actualite.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'headerjs', get_theme_file_uri() . '/assets/js/header.js', array(), _S_VERSION, true );
 
 	// TODO: fichier non utilisés
 	// wp_enqueue_script( 'dclab-navigation', get_theme_file_uri() . '/js/navigation.js', array(), _S_VERSION, true );
