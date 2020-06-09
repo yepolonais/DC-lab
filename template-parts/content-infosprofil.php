@@ -33,8 +33,8 @@
 
             <h1>Les métas users qu'on a créé</h1>
 
-
-    <form>
+            <img class="AvatarBody" id="Placeholder2DAvatarImage" alt="" src="http://avatar.xboxlive.com:80/avatar/<?php echo ($curauth->gamertag); /*le body avatar*/ ?>/avatar-body.png" />
+    <form action="" method="POST">
     
         <div class="form-group">
             <label for="exampleFormControlInput1">PSEUDO</label>
@@ -85,21 +85,47 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">MAIL</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="<?php echo $current_user->user_email ?>">
+            <input type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $current_user->user_email ?>">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">TEL</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="<?php echo get_user_meta($current_user->ID)['telephone'][0] ?>">
+            <input type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo get_user_meta($current_user->ID)['telephone'][0] ?>">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">DOMICILE</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo get_user_meta($current_user->ID)['domicile'][0] ?>">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">ENTREPRISE</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="entreprise" value="<?php echo get_user_meta($current_user->ID)['entreprise'][0] ?>">
         </div>
+
+        <input type="submit" value="Validez les modifications">
+
+        <button class="btn btn-primary">Primary</button>
+
+
+        
+
+
     </form>
+
+    <?php 
+
+        
+
+
+       update_user_meta($current_user->ID, "entreprise", $_POST['entreprise']);
+        ?>
+        
+<?php
+        /*var_dump($current_user->ID);*/
+
+
+
+?>
+
+
 
 
 
@@ -128,6 +154,13 @@
     echo '<br>';
     $sexe = get_user_meta($current_user->ID)['sexe'][0];
     echo $sexe;
+
+    
+
+
+
+
+
     ?>
            
 
