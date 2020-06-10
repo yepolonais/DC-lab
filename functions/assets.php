@@ -3,6 +3,7 @@
 function dclab_scripts() {
 	// Enqueue styles.
 	wp_enqueue_style( 'dclab-style', get_theme_file_uri() . '/assets/css/layout.css', array(), _S_VERSION );
+	wp_enqueue_style( 'css_actu', get_theme_file_uri() . '/assets/css/actu_layout.css', array(), _S_VERSION );
 	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
 
 	// Enqueue scripts.

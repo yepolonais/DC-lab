@@ -2,10 +2,10 @@
  //* Template de la page actualités
 ?>
 
-<div class="wrapper">
-	<div class="container">
+
+	<div>
+		<h2 class="title-actu">Les dernières Actualités</h2>
 		<section class="home-blog">
-			<h2>Les dernières Actualités</h2>
 					<div class="tri">
 			<?php dclab_tri_articles();?>
 		</div>
@@ -16,5 +16,3 @@
 			<?php dclab_tri_articles(); ?>
 		</div>
 	</div> <!--container-->
-</div> <!--wrapper-->
-

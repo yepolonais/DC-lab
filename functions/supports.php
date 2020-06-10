@@ -8,7 +8,8 @@ if ( ! function_exists( 'dclab_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// Permet d'enregister de nouvelles tailles d'images. Utiliser le plugin regenerate thumbnail ensuite
-		add_image_size('article-size', 300,300, true);
+		add_image_size('article-size', 350,200, true);
+		add_image_size('article-single', 1400,600, true);
 
 		// Ajout de menu personnalisés
 		register_nav_menus(
