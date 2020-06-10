@@ -6,6 +6,7 @@ if ( ! function_exists( 'dclab_setup' ) ) :
 		 // Laisse wordpress prendre en charge la gestion du titre, supporte l'upload d'images,
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support('custom-logo');
 
 		// Permet d'enregister de nouvelles tailles d'images. Utiliser le plugin regenerate thumbnail ensuite
 		add_image_size('article-size', 350,200, true);
@@ -19,6 +20,7 @@ if ( ! function_exists( 'dclab_setup' ) ) :
 				'ville' => esc_html__( 'choix des écoles', 'dclab' ),
 				'footer' => esc_html__( 'menu du pied de page', 'dclab' ),
 				'event-cat' => esc_html__( 'menu des catégories du calendrier', 'dclab' ),
+				'menufooter' => esc_html__( 'menufooter', 'dclab' ),
 			)
 		);
 
