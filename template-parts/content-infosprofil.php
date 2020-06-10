@@ -89,11 +89,11 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">TEL</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo get_user_meta($current_user->ID)['telephone'][0] ?>">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="telephone" value="<?php echo get_user_meta($current_user->ID)['telephone'][0] ?>">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">DOMICILE</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo get_user_meta($current_user->ID)['domicile'][0] ?>">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="domicile" value="<?php echo get_user_meta($current_user->ID)['domicile'][0] ?>">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">ENTREPRISE</label>
@@ -102,7 +102,7 @@
 
         <input type="submit" value="Validez les modifications">
 
-        <button class="btn btn-primary">Primary</button>
+        <!--<button class="btn btn-primary">Primary</button>  -->
 
 
         
@@ -112,14 +112,37 @@
 
     <?php 
 
-        
+    echo "<h2>les nouvelles données</h2>";
+    echo "<br>";
+    echo get_user_meta($current_user->ID)['ecole'][0];
+    echo "<br>";
+    echo get_user_meta($current_user->ID)['classe'][0];
+    echo "<br>";
+    echo get_user_meta($current_user->ID)['lab'][0];
+    echo "<br>";
+    echo get_user_meta($current_user->ID)['entreprise'][0];
+
+    echo "<br>";
 
 
-       update_user_meta($current_user->ID, "entreprise", $_POST['entreprise']);
+
+
+
+      update_user_meta($current_user->ID, "entreprise", $_POST['entreprise']);
+      update_user_meta($current_user->ID, "telephone", $_POST['telephone']);
+      update_user_meta($current_user->ID, "domicile", $_POST['domicile']);
+      
+
+
+
+
+
         ?>
         
 <?php
         /*var_dump($current_user->ID);*/
+
+
 
 
 
