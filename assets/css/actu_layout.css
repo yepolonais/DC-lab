@@ -203,6 +203,7 @@ body {
 .page-single-post {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 3em;
 }
 
 .page-single-post .post-thumbnail {
